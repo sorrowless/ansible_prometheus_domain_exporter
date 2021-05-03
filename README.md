@@ -1,9 +1,9 @@
 # sbog/prometheus_domain_exporter
 
 [![Build Status](https://travis-ci.com/sorrowless/ansible_prometheus_domain_exporter.svg?branch=master)](https://travis-ci.com/sorrowless/ansible_prometheus_domain_exporter)
-[![Ansible Role](https://img.shields.io/ansible/role/54506)](https://galaxy.ansible.com/sorrowless/prometheus_domain_exporter)
-[![Ansible Quality Score](https://img.shields.io/ansible/quality/54506)](https://galaxy.ansible.com/sorrowless/prometheus_domain_exporter)
-[![Ansible Role](https://img.shields.io/ansible/role/d/54506)](https://galaxy.ansible.com/sorrowless/prometheus_domain_exporter)
+[![Ansible Role](https://img.shields.io/ansible/role/54624)](https://galaxy.ansible.com/sorrowless/prometheus_domain_exporter)
+[![Ansible Quality Score](https://img.shields.io/ansible/quality/54624)](https://galaxy.ansible.com/sorrowless/prometheus_domain_exporter)
+[![Ansible Role](https://img.shields.io/ansible/role/d/54624)](https://galaxy.ansible.com/sorrowless/prometheus_domain_exporter)
 [![GitHub](https://img.shields.io/github/license/sorrowless/ansible_prometheus_domain_exporter)](https://github.com/sorrowless/ansible_prometheus_domain_exporter/blob/master/LICENSE)
 
 An Ansible role which installs and configures [Prometheus domain_exporter](https://github.com/caarlos0/domain_exporter) on Linux
