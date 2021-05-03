@@ -1,0 +1,20 @@
+---
+- name: Start docker domain_exporter container
+  docker_service:
+    state: present
+    project_name: prometheus_domain_exporter
+    definition:
+      version: '2'
+      services:
+        domain_exporter:
+          image: "{{ domain_exporter_docker_image }}"
+          container_name: "{{ domain_exporter_container_name }}"
+          ports:
+            - "127.0.0.1:{{ domain_exporter_host_port }}:{{ domain_exporter_host_port }}"
+          hostname: "{{ ansible_host }}"
+          restart: always
+          labels: "{{ domain_exporter_docker_labels }}"
+      networks:
+        default:
+          external:
+            name: "{{ domain_exporter_docker_network_name }}"
