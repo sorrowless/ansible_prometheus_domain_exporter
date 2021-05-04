@@ -12,6 +12,4 @@ domain_exporter_host_port: 9222
 domain_exporter_version: '1.11.0'
 domain_exporter_arch: linux_amd64
 domain_exporter_metrics_path: probe
-domain_exporter_user: blackbox
-domains:
-  - google.ru
+domain_exporter_user: domain_exporter
