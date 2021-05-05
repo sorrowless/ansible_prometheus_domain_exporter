@@ -8,6 +8,7 @@ domain_exporter_docker_labels:
   - prometheus
   - exporter
   - domain_exporter
+domain_exporter_host_address: 127.0.0.1
 domain_exporter_host_port: 9222
 domain_exporter_version: '1.11.0'
 domain_exporter_arch: linux_amd64
