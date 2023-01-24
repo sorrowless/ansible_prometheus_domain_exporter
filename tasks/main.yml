@@ -1,21 +1,20 @@
 ---
-- name: Ensure config dir
-  become: yes
-  become_user: root
-  file:
-    path: "{{ item }}"
-    state: directory
-    mode: 0755
-    owner: root
-    group: root
-  with_items:
-    - "{{ domain_exporter_config_dir }}"
-    - "{{ domain_exporter_config_dir }}/sources"
-
-- name: Include docker-related tasks
-  include_tasks: run_in_docker.yml
-  when: domain_exporter_run_in_docker
-
-- name: Include standalone tasks
-  include_tasks: run_standalone.yml
-  when: not domain_exporter_run_in_docker
+- name: Start docker domain_exporter container
+  community.docker.docker_compose:
+    state: present
+    project_name: prometheus_domain_exporter
+    definition:
+      version: '2'
+      services:
+        domain_exporter:
+          image: "{{ domain_exporter_docker_image }}:{{ docker_exporter_docker_tag }}"
+          container_name: "{{ domain_exporter_container_name }}"
+          ports:
+            - "127.0.0.1:{{ domain_exporter_host_port }}:{{ domain_exporter_container_port }}"
+          hostname: "{{ ansible_host }}"
+          restart: always
+          labels: "{{ domain_exporter_docker_labels }}"
+      networks:
+        default:
+          external:
+            name: "{{ domain_exporter_docker_network_name }}"

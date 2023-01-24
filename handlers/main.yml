@@ -1,5 +1,0 @@
----
-- name: Restart domain exporter
-  service:
-    name: domain-exporter.service
-    state: restarted
