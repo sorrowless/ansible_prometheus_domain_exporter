@@ -3,7 +3,7 @@ domain_exporter_config_dir: /var/lib/domain_exporter
 domain_exporter_run_in_docker: false
 domain_exporter_docker_network_name: prom_network
 domain_exporter_container_name: domain_exporter
-domain_exporter_docker_image: "lyricistmarbling/whois-exporter:1.0.0"
+domain_exporter_docker_image: "lyricistmarbling/whois-exporter"
 domain_exporter_docker_tag: "1.0.0"
 domain_exporter_docker_labels:
   - prometheus
