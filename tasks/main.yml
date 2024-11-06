@@ -1,10 +1,9 @@
 ---
 - name: Start docker domain_exporter container
-  community.docker.docker_compose:
+  community.docker.docker_compose_v2:
     state: present
     project_name: prometheus_domain_exporter
     definition:
-      version: '2'
       services:
         domain_exporter:
           image: "{{ domain_exporter_docker_image }}:{{ domain_exporter_docker_tag }}"
@@ -16,5 +15,5 @@
           labels: "{{ domain_exporter_docker_labels }}"
       networks:
         default:
-          external:
-            name: "{{ domain_exporter_docker_network_name }}"
+          external: true
+          name: "{{ domain_exporter_docker_network_name }}"
