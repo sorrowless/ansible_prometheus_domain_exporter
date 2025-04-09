@@ -1,6 +1,6 @@
 ---
 - name: Start docker domain_exporter container
-  community.docker.docker_compose:
+  community.docker.docker_compose_v2:
     state: present
     project_name: prometheus_domain_exporter
     definition:
