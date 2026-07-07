@@ -12,3 +12,5 @@ domain_exporter_docker_labels:
 domain_exporter_host_address: 127.0.0.1
 domain_exporter_host_port: 9222
 domain_exporter_container_port: 8000
+domain_exporter_uid: "10000"
+domain_exporter_gid: "{{ domain_exporter_uid }}"

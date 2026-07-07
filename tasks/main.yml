@@ -13,6 +13,7 @@
           hostname: "{{ ansible_host }}"
           restart: always
           labels: "{{ domain_exporter_docker_labels }}"
+          user: "{{ domain_exporter_uid }}:{{ domain_exporter_gid }}"
       networks:
         default:
           external: true
